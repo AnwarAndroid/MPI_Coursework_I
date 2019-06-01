@@ -48,10 +48,10 @@ public class MainActivity extends AppCompatActivity {
                 if (!validate()) {
                     db = openHelper.getWritableDatabase();
                     String Rname = _name.getText().toString();
-                    String Remail = _email.getText().toString();
+                    String Rmail = _email.getText().toString();
                     String Rpassword = _password.getText().toString();
                     String Rphone = _phone.getText().toString();
-                    insertdata(Rname, Remail, Rpassword, Rphone);
+                    insertdata(Rname, Rmail, Rpassword, Rphone);
                     Toast.makeText(getApplicationContext(), "Registered Successfully!", Toast.LENGTH_LONG).show();
 
                 }
@@ -77,10 +77,10 @@ public class MainActivity extends AppCompatActivity {
         });
 
     }
-    public void insertdata(String Rname, String Remail, String Rpassword, String Rphone){
+    public void insertdata(String Rname, String Rmail, String Rpassword, String Rphone){
         ContentValues contentValues = new ContentValues();
         contentValues.put(DatabaseHelper.COL_2, Rname);
-        contentValues.put(DatabaseHelper.COL_3, Remail);
+        contentValues.put(DatabaseHelper.COL_3, Rmail);
         contentValues.put(DatabaseHelper.COL_4, Rpassword);
         contentValues.put(DatabaseHelper.COL_5, Rphone);
         long id = db.insert(DatabaseHelper.TABLE_NAME,null,contentValues);
